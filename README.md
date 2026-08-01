@@ -1,22 +1,22 @@
-# 📊 AdventureWorks E-Commerce Sales & Customer Analytics (SQL)
+#  AdventureWorks E-Commerce Sales & Customer Analytics (SQL)
 
 Welcome to the **AdventureWorks Sales & Customer Analytics** project repository. This project demonstrates advanced SQL data analysis skills applied to real-world business scenarios using the `AdventureWorksDW` sample database in Microsoft SQL Server (SSMS).
 
 ---
 
-## 📌 Project Overview | نبذة عن المشروع
+##  Project Overview | نبذة عن المشروع
 يقدم هذا المشروع تحليلاً شاملاً لأداء المبيعات وسلوك العملاء لشركة تجارة إلكترونية، مع التركيز على استخراج رؤى استراتيجية تدعم اتخاذ القرار التجاري، وذلك باستخدام تقنيات SQL المتقدمة مثل **CTEs**, **Window Functions (LAG, NTILE)**, و **Cumulative Calculations**.
 
 ---
 
-## 🛠️ Tech Stack & Tools
+##  Tech Stack & Tools
 * **Database Engine:** Microsoft SQL Server (SSMS)
 * **Dataset:** `AdventureWorksDW`
 * **SQL Techniques:** CTEs, Window Functions (`LAG`, `SUM() OVER`, `NTILE`), Conditional Logic (`CASE`), Data Cleaning (`NULLIF`, `IS NOT NULL`).
 
 ---
 
-## 📂 Repository Structure & Key Analysis | هيكل المشروع والتحليلات
+##  Repository Structure & Key Analysis | هيكل المشروع والتحليلات
 
 ### 1) `01_Yearly_Running_Total_and_Growth.sql`
 * **Objective:** Track yearly cumulative sales performance and measure YoY progress month by month.
@@ -39,12 +39,12 @@ Business Insight: Evaluates the revenue contribution and density of each tier (P
 * **Key Technique:** Multi-level CTEs, `SUM() OVER(ORDER BY ... ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)`.
 * **Business Insight:** Categorizes customers into strategic tiers (`Top 20% VIP`, `Top 50% High Value`, `Mid Tier`, `Low Tier`) to optimize retention programs and targeted marketing campaigns.
   __ __ __
-## 🚀 How to Run the Queries
+ How to Run the Queries
 1. Restore the `AdventureWorksDW` database in SQL Server Management Studio (SSMS).
 2. Ensure you execute the `USE AdventureWorksDW;` command prior to running any query.
 3. Run the `.sql` scripts in order (`01`, `02`, `03`) to inspect the analysis.
 
 ---
 
-👨‍💻 **Author:** Qusai  
-💼 **Focus:** Data Analytics & Business Intelligence
+ Author: Qusai  
+ Focus: Data Analytics & Business Intelligence
