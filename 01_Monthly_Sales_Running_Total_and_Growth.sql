@@ -21,7 +21,7 @@ RunningTotalSales AS (
         OrderYear,
         OrderMonth,
         CurrentMonthSales,
-        -- الخطوة 1: حساب المتراكم السنوي أولاً بشكل نظيف
+           
         SUM(CurrentMonthSales) OVER (
             PARTITION BY OrderYear 
             ORDER BY OrderMonth 
@@ -35,12 +35,12 @@ SELECT
     OrderMonth,
     CurrentMonthSales,
     Yearly_Running_Total,
-    -- الخطوة 2: حساب المتراكم للشهر السابق (يتحرك داخل نفس السنة بفضل PARTITION BY)
+   
     LAG(Yearly_Running_Total) OVER (
         PARTITION BY OrderYear 
         ORDER BY OrderMonth
     ) AS Previous_Yearly_Running_Total,
-    -- الخطوة 3: حساب نسبة نمو المتراكم بدقة بدون تعقيد الأقواس
+   
     CAST (
         (Yearly_Running_Total - LAG(Yearly_Running_Total) OVER (PARTITION BY OrderYear ORDER BY OrderMonth)) * 100.0 
         / NULLIF(LAG(Yearly_Running_Total) OVER (PARTITION BY OrderYear ORDER BY OrderMonth), 0) 
