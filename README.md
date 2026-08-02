@@ -39,7 +39,20 @@ Business Insight: Evaluates the revenue contribution and density of each tier (P
 * **Key Technique:** Multi-level CTEs, `SUM() OVER(ORDER BY ... ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)`.
 * **Business Insight:** Categorizes customers into strategic tiers (`Top 20% VIP`, `Top 50% High Value`, `Mid Tier`, `Low Tier`) to optimize retention programs and targeted marketing campaigns.
 
-### 05) `05 This SQL script performs a Market Basket Analysis on the Factinternetsales data warehouse. It identifies which products are most frequently purchased together by the same customer within the same transaction (order date). This insight helps businesses optimize product recommendations, design effective cross-selling strategies, and create bundled promotional offers .
+### 05) #  Market Basket Analysis (Cross-Selling Analytics)
+
+## Overview
+This project performs a **Market Basket Analysis** on the `AdventureWorksDW` database to identify product affinities and purchasing patterns. By analyzing customer transaction history, the query pinpoints the top 10 product pairs most frequently bought together within a single invoice (`SalesOrderNumber`).
+
+This analysis helps e-commerce and retail businesses optimize product placement, design bundle strategies, and build targeted cross-selling campaigns.
+
+---
+
+ Business Problem
+Understanding which products are bought together enables businesses to:
+* **Increase Average Order Value (AOV):** By recommending complementary products at checkout.
+* **Optimize Inventory & Logistics:** By bundling items that are naturally purchased together.
+* **Enhance Marketing Campaigns:** By tailoring promotions and cross-selling ads to specific product pairs.
   __ __ __
  How to Run the Queries
 1. Restore the `AdventureWorksDW` database in SQL Server Management Studio (SSMS).
