@@ -2,20 +2,22 @@
 
  --معرفة المنتجات التي تُباع معاً في نفس الفاتورة--
 
+    
+
 SELECT TOP 10
     p1.[EnglishProductName] AS Product_A,
     p2.[EnglishProductName] AS Product_B,
     COUNT(*) AS Times_Bought_Together
 FROM [dbo].[FactInternetSales] f1
 JOIN [dbo].[FactInternetSales] f2 
-ON f1.[CustomerKey] = f2.[CustomerKey] 
-AND f1.[OrderDate] = f2.[OrderDate]
-
-AND f1.[ProductKey] < f2.[ProductKey] 
+    ON f1.[SalesOrderNumber] = f2.[SalesOrderNumber]     
+    AND f1.[ProductKey] < f2.[ProductKey]                 
 
 JOIN [dbo].[DimProduct] p1 ON f1.[ProductKey] = p1.[ProductKey]
 JOIN [dbo].[DimProduct] p2 ON f2.[ProductKey] = p2.[ProductKey]
 
-GROUP BY p1.[EnglishProductName], p2.[EnglishProductName]
-
-ORDER BY Times_Bought_Together DESC;
+GROUP BY 
+    p1.[EnglishProductName], 
+    p2.[EnglishProductName]
+ORDER BY 
+    Times_Bought_Together DESC;
