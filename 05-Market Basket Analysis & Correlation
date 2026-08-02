@@ -2,8 +2,6 @@
 
  --معرفة المنتجات التي تُباع معاً في نفس الفاتورة--
 
-    
-
 SELECT TOP 10
     p1.[EnglishProductName] AS Product_A,
     p2.[EnglishProductName] AS Product_B,
